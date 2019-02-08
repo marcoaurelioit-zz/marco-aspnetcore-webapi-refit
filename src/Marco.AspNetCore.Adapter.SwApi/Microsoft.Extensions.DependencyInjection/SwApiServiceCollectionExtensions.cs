@@ -1,10 +1,10 @@
 ﻿using Marco.AspNetCore.Adapter.SwApi;
 using Marco.AspNetCore.Adapter.SwApi.Clients;
 using Marco.AspNetCore.Domain.Adapters;
-using Marco.Http.Client.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Refit;
 using System;
+using System.Net.Http;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -26,9 +26,12 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddScoped(serviceProvider =>
             {
-                var httpClientFactory = serviceProvider.GetService<IMarcoHttpClientFactory>();
-                var httpClient = httpClientFactory.Create();
-                httpClient.BaseAddress = new Uri(swApiAdapterConfiguration.SwApiUrlBase);
+                //TODO: Factory para HttpClient em desenvolvimento em breve este projeto será atualizado.
+
+                var httpClient = new HttpClient()
+                {
+                    BaseAddress = new Uri(swApiAdapterConfiguration.SwApiUrlBase)
+                };
 
                 return RestService.For<IPeopleClient>(httpClient);
             });
