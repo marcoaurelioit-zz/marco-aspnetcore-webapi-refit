@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Marco.AspNetCore.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Marco.AspNetCore.WebApi.Controllers.PeoplesController.GetPeopleByIdAsync(System.Int32)">
+            <summary>
+            Get people by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

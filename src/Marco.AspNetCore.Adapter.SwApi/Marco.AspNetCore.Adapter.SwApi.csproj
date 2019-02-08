@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="7.0.1" />
+    <PackageReference Include="Marco.Extensions.Configuration" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />    
+    <PackageReference Include="Refit" Version="4.6.58" />
+    <PackageReference Include="Marco.Http.Client.Abstractions" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Marco.AspNetCore.Domain\Marco.AspNetCore.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
