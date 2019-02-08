@@ -29,7 +29,8 @@ namespace Marco.AspNetCore.WebApi.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(People), 200)]
         [ProducesResponseType(typeof(CoreException<CoreExceptionItem>), 400)]
-        [ProducesResponseType(typeof(InternalServerError), 500)]
+        [ProducesResponseType(typeof(NotFoundResult), 404)]
+        [ProducesResponseType(typeof(InternalServerError), 500)]        
         public async Task<IActionResult> GetPeopleByIdAsync([FromRoute]int id)
         {
             var people = await _peopleAdapter.GetByIdAsync(id);
