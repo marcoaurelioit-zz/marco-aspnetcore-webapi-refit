@@ -22,8 +22,7 @@ namespace Marco.AspNetCore.Adapter.SwApi
         {
             try
             {
-                var peopleGetResult = await _peopleClient.GetByIdAsync(id);
-                return Mapper.Map<PeopleGetResult, People>(peopleGetResult);
+                return Mapper.Map<PeopleGetResult, People>(await _peopleClient.GetByIdAsync(id));
             }
             catch (ApiException e)
             {
